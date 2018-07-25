@@ -1,0 +1,16 @@
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.csproj.CoreCompileInputs.cache
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.AssemblyInfoInputs.cache
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.AssemblyInfo.cs
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.deps.json
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.runtimeconfig.json
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.runtimeconfig.dev.json
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.dll
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.csprojResolveAssemblyReference.cache
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.RazorAssemblyInfo.cache
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.RazorAssemblyInfo.cs
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.RazorTargetAssemblyInfo.cache
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.pdb
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.dll
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.pdb
+E:\CodeSource\WebAPI\BookingWeb\bin\Debug\netcoreapp2.1\BookingWeb.Views.dll
+E:\CodeSource\WebAPI\BookingWeb\obj\Debug\netcoreapp2.1\BookingWeb.csproj.CopyComplete

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html class="ng-scope" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Booking</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/bootstrap-4.1.1-dist/js/bootstrap.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <link href="Scripts/bootstrap-4.1.1-dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <link href="Scripts/bootstrap-4.1.1-dist/css/booking.css" rel="stylesheet" />
+
+    <script src="app/app.js"></script>
+    <script src="app/factorys/bookingfactorys.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/calendareController.js"></script>
+    <script src="app/directive/calendarDirective.js"></script>
+    <script src="app/controllers/timeBooking.js"></script>
+    <script src="app/controllers/bookinglistController.js"></script>
+</head>
+<body>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Booking</h1>
+        <p class="lead">choose a day, choose a time and click save</p>
+    </div>
+
+    <div class="container" id="calnderlogin">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow noborder">
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Login</h4>
+                </div>
+                <div class="card-body">
+
+                    <dive id="loginapp">
+
+                        <div ng-controller="loginController">
+                            <div class="error">
+                                {{loginError}}
+                            </div>
+                            <div class="mb-3 text-left">
+                                <label>UserName<span class="text-muted"></span></label>
+                                <input class="form-control" type="text" ng-model="userName" />
+                                <div class="error">
+                                    {{userNameError}}
+                                </div>
+                            </div>
+
+                            <div class="mb-3 text-left">
+                                <label>Password<span class="text-muted"></span></label>
+                                <input class="form-control" type="password" ng-model="password" />
+                                <div class="error">
+                                    {{passwordError}}
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-lg btn-block btn-primary" ng-click="send()">Save</button>
+                        </div>
+                    </dive>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow noborder">
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="calnderbody">
+        <div class="card-deck mb-3 text-center">
+
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Calendar</h4>
+                </div>
+                <div class="card-body">
+
+                    <dive id="booking">
+                        <dive ng-controller="calendarbooking">
+                            <calendar selected="day" getdate="date"></calendar>
+                        </dive>
+                    </dive>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Time</h4>
+                </div>
+                <div class="card-body">
+                    <dive id="bookingTime">
+                        <dive ng-controller="timeBooking">
+
+                            <div class="error">
+                                {{bookingError}}
+                            </div>
+
+                            <div class="mb-3 text-left">
+                                <label for="email">Day<span class="text-muted"></span></label>
+                                <input class="form-control" id="email" placeholder="Choose a day" type="date" value="{{date}}" readonly>
+                                <div class="error">
+                                    {{dateError}}
+                                </div>
+                            </div>
+
+                            <div class="mb-3 text-left">
+                                <label for="email">Time<span class="text-muted"></span></label>
+                                <select class="custom-select d-block w-100" id="state" ng-model="selectedItem" ng-change="getSelectedText()">
+                                    <option value="">Choose a time</option>
+                                    <option class="selectedItem" ng-repeat="item in timeList" ng-value="item">{{item}}</option>
+                                </select>
+                                <div class="error">
+                                    {{timeError}}
+                                </div>
+                            </div>
+                            <br />
+                            <button type="button" class="btn btn-lg btn-block btn-primary" ng-click="send()">Save</button>
+                        </dive>
+                    </dive>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">All The Bookings</h4>
+                </div>
+                <div class="card-body">
+
+                    <dive id="ProductApp">
+
+                        <div ng-controller="bookinglistController">
+
+                            <div class="container">
+                                <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.125); font-size:14px; text-align: center; font-weight: bold">
+                                    <div class="col-sm">
+                                        Date
+                                    </div>
+                                    <div class="col-sm">
+                                        Time
+                                    </div>
+                                    <div class="col-sm">
+                                    </div>
+                                </div>
+                                <div class="row" ng-repeat="booking in bookings" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+
+                                    <div class="col-sm">
+                                        {{booking.date.split('T')[0]}}
+                                    </div>
+                                    <div class="col-sm">
+                                        {{booking.time}}
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <button type="button" id="deletebutton" class=" btn-block btn-primary" ng-click="delete(booking.id)">Delete</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <button type="button" class="btn btn-lg btn-block btn-primary" ng-click="logout()">Logout</button>
+                            </div>
+                        </div>
+                    </dive>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
